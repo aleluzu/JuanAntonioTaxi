@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   AirplaneTakeoff,
   Buildings,
@@ -97,14 +96,25 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-media" aria-label="Toyota RAV4 blanco de taxi">
-          <Image
-            src={`${basePath}/images/rav4.webp`}
-            alt="Toyota RAV4 blanco de Juan Antonio Requena"
-            fill
-            priority
-            sizes="100vw"
-            className="hero-image"
-          />
+          <picture className="image-fill">
+            <source
+              srcSet={`${basePath}/images/rav4-mobile.webp`}
+              media="(max-width: 640px)"
+              type="image/webp"
+            />
+            <source
+              srcSet={`${basePath}/images/rav4-desktop.webp`}
+              media="(min-width: 641px)"
+              type="image/webp"
+            />
+            <img
+              src={`${basePath}/images/rav4.webp`}
+              alt="Toyota RAV4 blanco de Juan Antonio Requena"
+              fetchPriority="high"
+              decoding="async"
+              className="image-fill-img hero-image"
+            />
+          </picture>
         </div>
       </section>
 
@@ -140,13 +150,20 @@ export default function Home() {
       <section className="why-section" aria-labelledby="why-title">
         <div className="section-shell why-shell">
           <div className="why-media">
-            <Image
-              src={`${basePath}/images/taxista-con-coche.webp`}
-              alt="Juan Antonio Requena junto a su Toyota RAV4 blanco"
-              fill
-              sizes="(max-width: 900px) 100vw, 48vw"
-              className="why-image"
-            />
+            <picture className="image-fill">
+              <source
+                srcSet={`${basePath}/images/taxista-con-coche-mobile.webp`}
+                media="(max-width: 640px)"
+                type="image/webp"
+              />
+              <img
+                src={`${basePath}/images/taxista-con-coche.webp`}
+                alt="Juan Antonio Requena junto a su Toyota RAV4 blanco"
+                loading="lazy"
+                decoding="async"
+                className="image-fill-img why-image"
+              />
+            </picture>
           </div>
           <div className="why-copy">
             <p className="section-label">Por qué elegirme</p>
@@ -170,13 +187,20 @@ export default function Home() {
       </section>
 
       <section className="zone-section" aria-labelledby="zone-title">
-        <Image
-          src={`${basePath}/images/guadix.webp`}
-          alt="Vista de Guadix y su entorno"
-          fill
-          sizes="100vw"
-          className="zone-image"
-        />
+        <picture className="image-fill">
+          <source
+            srcSet={`${basePath}/images/guadix-mobile.webp`}
+            media="(max-width: 640px)"
+            type="image/webp"
+          />
+          <img
+            src={`${basePath}/images/guadix.webp`}
+            alt="Vista de Guadix y su entorno"
+            loading="lazy"
+            decoding="async"
+            className="image-fill-img zone-image"
+          />
+        </picture>
         <div className="zone-overlay" />
         <div className="section-shell zone-content">
           <p className="section-label section-label-light">Zona de servicio</p>

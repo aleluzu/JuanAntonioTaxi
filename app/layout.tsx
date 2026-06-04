@@ -71,12 +71,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/rav4-mobile.webp"
+          media="(max-width: 640px)"
+          type="image/webp"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/rav4-desktop.webp"
+          media="(min-width: 641px)"
+          type="image/webp"
+        />
+      </head>
       <body className={geist.variable}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M0ZF512S4S"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

@@ -186,6 +186,17 @@ p {
   box-shadow: var(--shadow);
 }
 
+.image-fill {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.image-fill-img {
+  width: 100%;
+  height: 100%;
+}
+
 .hero-image,
 .zone-image,
 .why-image {
