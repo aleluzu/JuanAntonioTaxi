@@ -98,7 +98,7 @@ export default function Home() {
         </div>
         <div className="hero-media" aria-label="Toyota RAV4 blanco de taxi">
           <Image
-            src={`${basePath}/images/rav4.png`}
+            src={`${basePath}/images/rav4.webp`}
             alt="Toyota RAV4 blanco de Juan Antonio Requena"
             fill
             priority
@@ -141,10 +141,9 @@ export default function Home() {
         <div className="section-shell why-shell">
           <div className="why-media">
             <Image
-              src={`${basePath}/images/taxista-con-coche.png`}
+              src={`${basePath}/images/taxista-con-coche.webp`}
               alt="Juan Antonio Requena junto a su Toyota RAV4 blanco"
               fill
-              loading="eager"
               sizes="(max-width: 900px) 100vw, 48vw"
               className="why-image"
             />
@@ -172,10 +171,9 @@ export default function Home() {
 
       <section className="zone-section" aria-labelledby="zone-title">
         <Image
-          src={`${basePath}/images/guadix.png`}
+          src={`${basePath}/images/guadix.webp`}
           alt="Vista de Guadix y su entorno"
           fill
-          loading="eager"
           sizes="100vw"
           className="zone-image"
         />
