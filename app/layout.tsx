@@ -88,6 +88,13 @@ export default function RootLayout({
         />
       </head>
       <body className={geist.variable}>
+        <script
+          id="local-business-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M0ZF512S4S"
           strategy="lazyOnload"
@@ -99,13 +106,6 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-M0ZF512S4S');
           `}
-        </Script>
-        <Script
-          id="local-business-json-ld"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify(localBusinessJsonLd)}
         </Script>
         {children}
       </body>
